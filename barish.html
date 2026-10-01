@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Barish – a chill Discord server for South Asia and beyond</title>
+<link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#060a18;--ink:#e8eeff;--mute:#9bb0e0;--neon:#3d6bff;--glow:#7fa6ff;--line:#1b2850;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 Outfit,system-ui,sans-serif}
+canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+main{position:relative;z-index:1;max-width:720px;margin:0 auto;padding:0 22px}
+.hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:60px 0 40px}
+h1{font:400 clamp(60px,18vw,132px)/1 "Tilt Neon",Outfit,sans-serif;margin:0;color:#dbe6ff;letter-spacing:.02em;
+text-shadow:0 0 6px var(--glow),0 0 18px var(--neon),0 0 44px var(--neon),0 0 90px #1f3fd0;animation:on 1.6s steps(1) 1}
+@keyframes on{0%{opacity:0}8%{opacity:1}12%{opacity:.15}18%{opacity:1}24%{opacity:.3}30%,100%{opacity:1}}
+.hero p{max-width:30em;color:var(--mute);font-size:19px;margin:22px 0 32px}
+.btn{display:inline-block;background:var(--neon);color:#fff;font-weight:600;text-decoration:none;padding:15px 34px;border-radius:999px;
+box-shadow:0 0 28px rgba(61,107,255,.55);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 0 42px rgba(61,107,255,.8)}
+a:focus-visible{outline:3px solid var(--glow);outline-offset:4px}
+h2{font:400 clamp(30px,6vw,40px)/1.15 "Tilt Neon",Outfit,sans-serif;margin:0 0 20px;color:#fff;text-shadow:0 0 18px rgba(61,107,255,.6)}
+section{padding:44px 0;border-top:1px solid var(--line)}
+.reasons{list-style:none;margin:0;padding:0}
+.reasons li{padding:16px 0;border-bottom:1px solid var(--line)}
+.reasons li:last-child{border:0}
+.reasons b{display:block;font-size:19px;color:#fff;font-weight:600}
+.reasons span{color:var(--mute)}
+.places{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0;padding:0;list-style:none}
+.places li{border:1px solid var(--neon);border-radius:999px;padding:7px 18px;box-shadow:0 0 14px rgba(61,107,255,.25) inset}
+.final{text-align:center}
+.final p{color:var(--mute);margin:0 0 26px}
+footer{position:relative;z-index:1;text-align:center;color:#6479b0;font-size:14px;padding:30px 22px 40px}
+@media (prefers-reduced-motion:reduce){h1{animation:none}.btn{transition:none}}
+</style>
+</head>
+<body>
+<canvas id="rain" aria-hidden="true"></canvas>
+<main>
+  <header class="hero">
+    <h1>BARISH</h1>
+    <p>A chill Discord server where people from Bangladesh, India, Pakistan, Nepal and more countries talk together.</p>
+    <a class="btn" href="https://discord.gg/r8RBpJPfGE" target="_blank" rel="noopener">Join the server</a>
+  </header>
+  <section>
+    <h2>Why join Barish</h2>
+    <ul class="reasons">
+      <li><b>Relaxed vibe</b><span>No pressure and no drama. Hop in, hang out, leave whenever you want.</span></li>
+      <li><b>Friendly community</b><span>Members are welcoming to newcomers, so you will find someone to chat with right away.</span></li>
+      <li><b>Giveaways</b><span>We host giveaways for the community, so being active here can pay off.</span></li>
+      <li><b>Many cultures, one place</b><span>Talk with people from different countries and share languages, music, food and memes.</span></li>
+    </ul>
+  </section>
+  <section>
+    <h2>Who is here</h2>
+    <p>Barish means rain, and just like rain it reaches everywhere. Our members come from:</p>
+    <ul class="places">
+      <li>Bangladesh</li><li>India</li><li>Pakistan</li><li>Nepal</li><li>And more</li>
+    </ul>
+  </section>
+  <section class="final">
+    <h2>Come in out of the rain</h2>
+    <p>Free to join. Takes less than a minute.</p>
+    <a class="btn" href="https://discord.gg/r8RBpJPfGE" target="_blank" rel="noopener">Join on Discord</a>
+  </section>
+</main>
+<footer>Barish Discord community</footer>
+<script>
+(function(){
+  var c=document.getElementById('rain'),x=c.getContext('2d'),w,h,d=[];
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  function size(){w=c.width=innerWidth;h=c.height=innerHeight;d=[];for(var i=0;i<Math.min(120,w/6);i++)d.push({x:Math.random()*w,y:Math.random()*h,l:10+Math.random()*18,s:5+Math.random()*7})}
+  function tick(){x.clearRect(0,0,w,h);x.strokeStyle='rgba(127,166,255,.28)';x.lineWidth=1;x.beginPath();
+    for(var i=0;i<d.length;i++){var r=d[i];x.moveTo(r.x,r.y);x.lineTo(r.x-2,r.y+r.l);r.y+=r.s;if(r.y>h){r.y=-r.l;r.x=Math.random()*w}}
+    x.stroke();requestAnimationFrame(tick)}
+  addEventListener('resize',size);size();tick();
+})();
+</script>
+</body>
+</html>
