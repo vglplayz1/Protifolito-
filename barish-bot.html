@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050816">
+<meta name="description" content="Barish Official Bot — moderation, utility, fun and community tools for your Discord server.">
+<title>Barish Official Bot • Discord</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#040714;--panel:rgba(11,19,43,.72);--ink:#f1f5ff;--muted:#98a9cf;--blue:#4d7cff;--cyan:#6fe4ff;--green:#63f5a6;--line:rgba(132,160,235,.18);--max:1080px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;color-scheme:dark}body{margin:0;background:radial-gradient(circle at 50% -15%,#18316d 0,#070d22 36%,#03050e 100%);color:var(--ink);font:16px/1.65 Outfit,system-ui,sans-serif;overflow-x:hidden}
+#rain{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 20%,transparent 20%,rgba(0,0,0,.3) 100%);z-index:0}
+nav{position:fixed;top:15px;left:50%;transform:translateX(-50%);width:min(calc(100% - 28px),var(--max));display:flex;align-items:center;justify-content:space-between;padding:10px 13px;border:1px solid var(--line);border-radius:18px;background:rgba(4,7,20,.66);backdrop-filter:blur(18px);z-index:10;box-shadow:0 12px 45px rgba(0,0,0,.2)}
+.brand{display:flex;align-items:center;gap:10px;font:700 19px "Space Grotesk";letter-spacing:.1em}.botmark{width:31px;height:31px;display:grid;place-items:center;border-radius:10px;background:linear-gradient(135deg,#4d7cff,#6c5cff);box-shadow:0 0 22px rgba(77,124,255,.45);font-size:15px}
+.navlinks{display:flex;gap:20px}.navlinks a{color:#aebdde;text-decoration:none;font-size:14px}.navlinks a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 20px;border-radius:13px;text-decoration:none;font-weight:700;transition:.22s;border:1px solid transparent}.primary{color:#fff;background:linear-gradient(135deg,#4d7cff,#675cff);box-shadow:0 10px 35px rgba(77,124,255,.28)}.ghost{color:#d9e5ff;border-color:var(--line);background:rgba(255,255,255,.035)}.btn:hover{transform:translateY(-3px);box-shadow:0 15px 45px rgba(77,124,255,.35)}
+.wrap{position:relative;z-index:1;width:min(calc(100% - 34px),var(--max));margin:auto}.hero{min-height:100vh;display:grid;place-items:center;text-align:center;padding:135px 0 85px}.pill{display:inline-flex;align-items:center;gap:8px;padding:7px 13px;border:1px solid var(--line);border-radius:999px;background:rgba(17,31,67,.55);color:#b9c8e9;font-size:13px}.online{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 13px var(--green)}
+h1{font:700 clamp(55px,11vw,108px)/.95 "Space Grotesk";letter-spacing:-.06em;margin:24px 0 14px;background:linear-gradient(180deg,#fff 15%,#b7ceff 55%,#628aff);-webkit-background-clip:text;color:transparent;filter:drop-shadow(0 0 26px rgba(77,124,255,.4));animation:levitate 4s ease-in-out infinite}
+@keyframes levitate{50%{transform:translateY(-8px)}}.sub{max-width:700px;margin:0 auto 28px;color:var(--muted);font-size:19px}.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+section{padding:78px 0}h2{font:700 clamp(30px,5vw,47px)/1.08 "Space Grotesk";letter-spacing:-.045em;margin:0 0 10px}.lead{color:var(--muted);max-width:650px;margin:0 0 30px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{padding:24px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,rgba(17,30,66,.7),rgba(7,12,29,.72));transition:.25s}.card:hover{transform:translateY(-5px);border-color:rgba(111,228,255,.35);box-shadow:0 18px 55px rgba(0,0,0,.25)}.ico{font-size:28px}.card h3{margin:10px 0 5px;font-size:19px}.card p{margin:0;color:var(--muted);font-size:14px}
+.commandbox{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:rgba(7,12,28,.75);box-shadow:0 25px 70px rgba(0,0,0,.2)}.terminalbar{display:flex;gap:7px;padding:13px 15px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.025)}.terminalbar i{width:8px;height:8px;border-radius:50%;background:#7182a8}.commands{display:grid;grid-template-columns:repeat(2,1fr);gap:0}.cmd{padding:18px 20px;border-bottom:1px solid var(--line)}.cmd:nth-child(odd){border-right:1px solid var(--line)}.cmd code{color:#86aaff;font-family:ui-monospace,SFMono-Regular,monospace;font-weight:700}.cmd span{display:block;color:#8394b9;font-size:13px;margin-top:4px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:25px}.stat{text-align:center;padding:21px;border:1px solid var(--line);border-radius:18px;background:rgba(13,23,50,.55)}.stat strong{display:block;font:700 28px "Space Grotesk"}.stat span{color:#8293b8;font-size:13px}
+.cta{text-align:center;padding:62px 25px;border:1px solid rgba(111,228,255,.25);border-radius:28px;background:radial-gradient(circle at 50% 0,rgba(77,124,255,.2),rgba(8,14,32,.82) 62%);overflow:hidden;position:relative}.cta:before{content:"";position:absolute;width:240px;height:240px;border-radius:50%;background:#4d7cff;filter:blur(100px);opacity:.14;left:50%;top:-180px;transform:translateX(-50%)}.cta>*{position:relative;z-index:1}.cta p{color:var(--muted);margin:0 0 24px}
+footer{position:relative;z-index:1;text-align:center;color:#607199;border-top:1px solid var(--line);padding:34px 20px 48px;font-size:13px}
+@media(max-width:760px){.navlinks{display:none}.cards{grid-template-columns:1fr}.commands{grid-template-columns:1fr}.cmd:nth-child(odd){border-right:0}.stats{grid-template-columns:1fr}.hero{padding-top:115px}.sub{font-size:17px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}h1{animation:none}}
+</style>
+</head>
+<body>
+<canvas id="rain" aria-hidden="true"></canvas>
+<nav>
+<div class="brand"><span class="botmark">☁</span>BARISH BOT</div>
+<div class="navlinks"><a href="#features">Features</a><a href="#commands">Commands</a><a href="#join">Invite</a></div>
+<a class="btn primary" style="padding:9px 14px;font-size:13px" href="#join">Invite Bot ↗</a>
+</nav>
+
+<header class="hero wrap">
+<div>
+<div class="pill"><span class="online"></span> BARISH OFFICIAL BOT • ONLINE</div>
+<h1>Your server.<br>Powered by Barish.</h1>
+<p class="sub">A modern Discord bot built for moderation, utility, community fun and everyday server management — all with the Barish vibe.</p>
+<div class="actions"><a class="btn primary" href="#join">⚡ Invite Barish Bot</a><a class="btn ghost" href="#commands">View commands ↓</a></div>
+</div>
+</header>
+
+<main class="wrap">
+<section id="features">
+<h2>Everything your server needs.</h2><p class="lead">Clean commands, useful tools and fun features designed to work together.</p>
+<div class="cards">
+<article class="card"><div class="ico">🛡️</div><h3>Smart Moderation</h3><p>Keep your community organized with moderation-focused tools and configurable actions.</p></article>
+<article class="card"><div class="ico">⚙️</div><h3>Server Utility</h3><p>Useful commands for information, server management and everyday Discord tasks.</p></article>
+<article class="card"><div class="ico">🎮</div><h3>Fun & Games</h3><p>Add personality to your server with interactive commands and community activities.</p></article>
+<article class="card"><div class="ico">🎁</div><h3>Giveaways</h3><p>Run community events and giveaways without making the experience complicated.</p></article>
+<article class="card"><div class="ico">📊</div><h3>Server Insights</h3><p>Present useful server information in a simple, polished way.</p></article>
+<article class="card"><div class="ico">✨</div><h3>Barish Style</h3><p>A consistent visual identity made to feel at home in the Barish community.</p></article>
+</div>
+</section>
+
+<section id="commands">
+<h2>Quick command preview.</h2><p class="lead">A small taste of what the bot interface can look like.</p>
+<div class="commandbox"><div class="terminalbar"><i></i><i></i><i></i></div><div class="commands">
+<div class="cmd"><code>/help</code><span>Show all available commands</span></div>
+<div class="cmd"><code>/server</code><span>View server information</span></div>
+<div class="cmd"><code>/user</code><span>View user information</span></div>
+<div class="cmd"><code>/ping</code><span>Check bot response time</span></div>
+<div class="cmd"><code>/giveaway</code><span>Create a community giveaway</span></div>
+<div class="cmd"><code>/settings</code><span>Configure bot features</span></div>
+</div></div>
+<div class="stats"><div class="stat"><strong>24/7</strong><span>Designed for always-on servers</span></div><div class="stat"><strong>Slash</strong><span>Modern command experience</span></div><div class="stat"><strong>Fast</strong><span>Simple and responsive UI</span></div></div>
+</section>
+
+<section id="join">
+<div class="cta"><h2>Bring Barish to your server.</h2><p>Invite the official bot and give your community a cleaner, more useful Discord experience.</p><a class="btn primary" href="https://discord.com/oauth2/authorize?client_id=YOUR_BOT_CLIENT_ID&permissions=8&scope=bot%20applications.commands" target="_blank" rel="noopener">🤖 Add Barish Bot to Discord</a></div>
+</section>
+</main>
+<footer>© 2026 Barish Official Bot • Built for the Barish community.</footer>
+
+<script>
+(()=>{const c=document.getElementById('rain'),x=c.getContext('2d');let w,h,d=[];function size(){w=c.width=innerWidth;h=c.height=innerHeight;d=Array.from({length:Math.min(115,Math.floor(w/7))},()=>({x:Math.random()*w,y:Math.random()*h,l:10+Math.random()*20,s:5+Math.random()*8,a:.1+Math.random()*.22}))}function tick(){x.clearRect(0,0,w,h);for(const r of d){x.beginPath();x.strokeStyle='rgba(127,166,255,'+r.a+')';x.moveTo(r.x,r.y);x.lineTo(r.x-2,r.y+r.l);x.stroke();r.y+=r.s;if(r.y>h){r.y=-r.l;r.x=Math.random()*w}}requestAnimationFrame(tick)}if(!matchMedia('(prefers-reduced-motion:reduce)').matches){addEventListener('resize',size);size();tick()}})();
+</script>
+</body>
+</html>
