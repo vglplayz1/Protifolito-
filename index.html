@@ -3,80 +3,70 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Barish – a chill Discord server for South Asia and beyond</title>
-<link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#050816">
+<meta name="description" content="Barish — a chill Discord community for South Asia and beyond.">
+<title>BARISH • Discord Community</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#060a18;--ink:#e8eeff;--mute:#9bb0e0;--neon:#3d6bff;--glow:#7fa6ff;--line:#1b2850;
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-html{scroll-padding-top:env(safe-area-inset-top,0px);color-scheme:dark}
-*,*::before,*::after{box-sizing:inherit}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 Outfit,system-ui,sans-serif}
-canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
-main{position:relative;z-index:1;max-width:720px;margin:0 auto;padding:0 22px}
-.hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:60px 0 40px}
-h1{font:400 clamp(60px,18vw,132px)/1 "Tilt Neon",Outfit,sans-serif;margin:0;color:#dbe6ff;letter-spacing:.02em;
-text-shadow:0 0 6px var(--glow),0 0 18px var(--neon),0 0 44px var(--neon),0 0 90px #1f3fd0;animation:on 1.6s steps(1) 1}
-@keyframes on{0%{opacity:0}8%{opacity:1}12%{opacity:.15}18%{opacity:1}24%{opacity:.3}30%,100%{opacity:1}}
-.hero p{max-width:30em;color:var(--mute);font-size:19px;margin:22px 0 32px}
-.btn{display:inline-block;background:var(--neon);color:#fff;font-weight:600;text-decoration:none;padding:15px 34px;border-radius:999px;
-box-shadow:0 0 28px rgba(61,107,255,.55);transition:transform .15s,box-shadow .15s}
-.btn:hover{transform:translateY(-2px);box-shadow:0 0 42px rgba(61,107,255,.8)}
-a:focus-visible{outline:3px solid var(--glow);outline-offset:4px}
-h2{font:400 clamp(30px,6vw,40px)/1.15 "Tilt Neon",Outfit,sans-serif;margin:0 0 20px;color:#fff;text-shadow:0 0 18px rgba(61,107,255,.6)}
-section{padding:44px 0;border-top:1px solid var(--line)}
-.reasons{list-style:none;margin:0;padding:0}
-.reasons li{padding:16px 0;border-bottom:1px solid var(--line)}
-.reasons li:last-child{border:0}
-.reasons b{display:block;font-size:19px;color:#fff;font-weight:600}
-.reasons span{color:var(--mute)}
-.places{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0;padding:0;list-style:none}
-.places li{border:1px solid var(--neon);border-radius:999px;padding:7px 18px;box-shadow:0 0 14px rgba(61,107,255,.25) inset}
-.final{text-align:center}
-.final p{color:var(--mute);margin:0 0 26px}
-footer{position:relative;z-index:1;text-align:center;color:#6479b0;font-size:14px;padding:30px 22px 40px}
-@media (prefers-reduced-motion:reduce){h1{animation:none}.btn{transition:none}}
+:root{--bg:#050816;--panel:rgba(12,20,45,.72);--ink:#eef4ff;--muted:#9eafd4;--blue:#4d7cff;--cyan:#68d9ff;--line:rgba(126,157,235,.18);--max:1050px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;color-scheme:dark}body{margin:0;background:radial-gradient(circle at 50% -10%,#14285e 0,#050816 42%,#03050e 100%);color:var(--ink);font:16px/1.65 Outfit,system-ui,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px);background-size:100% 4px;z-index:5;opacity:.2}
+#rain{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);width:min(calc(100% - 28px),var(--max));padding:10px 14px;display:flex;align-items:center;justify-content:space-between;background:rgba(5,8,22,.58);backdrop-filter:blur(16px);border:1px solid var(--line);border-radius:18px;z-index:10}
+.logo{font:700 20px/1 "Space Grotesk";letter-spacing:.16em;text-shadow:0 0 18px #4d7cff}.navlinks{display:flex;gap:18px}.navlinks a{color:#b9c8e9;text-decoration:none;font-size:14px}.navlinks a:hover{color:#fff}
+.wrap{position:relative;z-index:1;width:min(calc(100% - 36px),var(--max));margin:auto}.hero{min-height:100vh;display:grid;place-items:center;text-align:center;padding:130px 0 90px}.eyebrow{display:inline-flex;gap:8px;align-items:center;padding:7px 13px;border:1px solid var(--line);border-radius:999px;background:rgba(18,31,66,.55);color:#b9c8e9;font-size:13px}.dot{width:7px;height:7px;border-radius:50%;background:#62f5a6;box-shadow:0 0 12px #62f5a6}
+h1{font:700 clamp(72px,16vw,155px)/.9 "Space Grotesk";margin:24px 0 18px;letter-spacing:-.06em;background:linear-gradient(180deg,#fff,#a9c5ff 45%,#5b83ff);-webkit-background-clip:text;color:transparent;filter:drop-shadow(0 0 25px rgba(77,124,255,.55));animation:float 4s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-7px)}}.hero p{max-width:680px;margin:0 auto 30px;color:var(--muted);font-size:19px}.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.btn{padding:13px 22px;border-radius:13px;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:8px;transition:.2s}.primary{background:linear-gradient(135deg,#4d7cff,#6d5cff);color:#fff;box-shadow:0 10px 35px rgba(77,124,255,.28)}.secondary{color:#d8e4ff;border:1px solid var(--line);background:rgba(255,255,255,.035)}.btn:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(77,124,255,.35)}
+section{padding:80px 0}h2{font:700 clamp(31px,6vw,48px)/1.05 "Space Grotesk";margin:0 0 12px;letter-spacing:-.04em} .lead{color:var(--muted);max-width:650px;margin:0 0 32px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}.card{padding:25px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,rgba(18,31,66,.7),rgba(7,12,29,.7));box-shadow:inset 0 1px rgba(255,255,255,.035);transition:.25s}.card:hover{transform:translateY(-5px);border-color:rgba(104,217,255,.35);box-shadow:0 18px 50px rgba(0,0,0,.25)}.icon{font-size:28px}.card h3{margin:10px 0 5px;font-size:20px}.card p{margin:0;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}.chip{padding:9px 15px;border-radius:999px;border:1px solid rgba(77,124,255,.38);background:rgba(77,124,255,.07);color:#cbd8f7}
+.cta{position:relative;overflow:hidden;text-align:center;padding:60px 25px;border:1px solid rgba(104,217,255,.25);border-radius:28px;background:radial-gradient(circle at 50% 0,rgba(77,124,255,.2),rgba(10,17,39,.8) 60%)}.cta:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:#4d7cff;filter:blur(100px);opacity:.12;right:-80px;bottom:-140px}.cta>*{position:relative;z-index:1}.cta p{color:var(--muted);margin:0 0 24px}
+footer{position:relative;z-index:1;text-align:center;color:#63749c;border-top:1px solid var(--line);padding:35px 20px 50px;font-size:13px}
+@media(max-width:650px){.navlinks{display:none}.grid{grid-template-columns:1fr}.hero p{font-size:17px}.wrap{width:min(calc(100% - 28px),var(--max))}section{padding:60px 0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}h1{animation:none}}
 </style>
 </head>
 <body>
 <canvas id="rain" aria-hidden="true"></canvas>
-<main>
-  <header class="hero">
-    <h1>BARISH</h1>
-    <p>A chill Discord server where people from Bangladesh, India, Pakistan, Nepal and more countries talk together.</p>
-    <a class="btn" href="https://discord.gg/r8RBpJPfGE" target="_blank" rel="noopener">Join the server</a>
-  </header>
-  <section>
-    <h2>Why join Barish</h2>
-    <ul class="reasons">
-      <li><b>Relaxed vibe</b><span>No pressure and no drama. Hop in, hang out, leave whenever you want.</span></li>
-      <li><b>Friendly community</b><span>Members are welcoming to newcomers, so you will find someone to chat with right away.</span></li>
-      <li><b>Giveaways</b><span>We host giveaways for the community, so being active here can pay off.</span></li>
-      <li><b>Many cultures, one place</b><span>Talk with people from different countries and share languages, music, food and memes.</span></li>
-    </ul>
-  </section>
-  <section>
-    <h2>Who is here</h2>
-    <p>Barish means rain, and just like rain it reaches everywhere. Our members come from:</p>
-    <ul class="places">
-      <li>Bangladesh</li><li>India</li><li>Pakistan</li><li>Nepal</li><li>And more</li>
-    </ul>
-  </section>
-  <section class="final">
-    <h2>Come in out of the rain</h2>
-    <p>Free to join. Takes less than a minute.</p>
-    <a class="btn" href="https://discord.gg/r8RBpJPfGE" target="_blank" rel="noopener">Join on Discord</a>
-  </section>
+<nav><div class="logo">BARISH</div><div class="navlinks"><a href="#about">About</a><a href="#vibe">Vibe</a><a href="#join">Join</a></div><a class="btn primary" style="padding:9px 14px;font-size:13px" href="https://discord.gg/r8RBpJPfGE" target="_blank" rel="noopener">Discord ↗</a></nav>
+
+<header class="hero wrap">
+<div>
+<div class="eyebrow"><span class="dot"></span> Community is open • Everyone welcome</div>
+<h1>BARISH</h1>
+<p>A chill Discord community where people from Bangladesh, India, Pakistan, Nepal and beyond meet, chat, share memes, music and good vibes.</p>
+<div class="actions"><a class="btn primary" href="https://discord.gg/r8RBpJPfGE" target="_blank" rel="noopener">💬 Join Barish</a><a class="btn secondary" href="#about">Explore ↓</a></div>
+</div>
+</header>
+
+<main class="wrap">
+<section id="about">
+<h2>Why Barish?</h2><p class="lead">No complicated stuff. Just a friendly place to drop in, meet people and have a good time.</p>
+<div class="grid">
+<article class="card"><div class="icon">🌧️</div><h3>Chill atmosphere</h3><p>Relax, talk and hang out without pressure. Come whenever you feel like it.</p></article>
+<article class="card"><div class="icon">🤝</div><h3>Friendly community</h3><p>New here? Jump into the conversation and meet people from across South Asia.</p></article>
+<article class="card"><div class="icon">🎁</div><h3>Giveaways</h3><p>Community giveaways and events give everyone something extra to look forward to.</p></article>
+<article class="card"><div class="icon">🌏</div><h3>Different cultures</h3><p>Share languages, food, music, memes and stories with people from different places.</p></article>
+</div>
+</section>
+
+<section id="vibe">
+<h2>One server, many places.</h2><p class="lead">Barish means rain — and like rain, the community reaches everywhere.</p>
+<div class="chips"><span class="chip">🇧🇩 Bangladesh</span><span class="chip">🇮🇳 India</span><span class="chip">🇵🇰 Pakistan</span><span class="chip">🇳🇵 Nepal</span><span class="chip">🌎 And more</span></div>
+</section>
+
+<section id="join">
+<div class="cta"><h2>Come in out of the rain.</h2><p>Free to join. Takes less than a minute.</p><a class="btn primary" href="https://discord.gg/r8RBpJPfGE" target="_blank" rel="noopener">🚀 Join the Discord</a></div>
+</section>
 </main>
-<footer>Barish Discord community</footer>
+<footer>© 2026 Barish Discord Community • Made for good vibes.</footer>
+
 <script>
 (function(){
-  var c=document.getElementById('rain'),x=c.getContext('2d'),w,h,d=[];
-  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
-  function size(){w=c.width=innerWidth;h=c.height=innerHeight;d=[];for(var i=0;i<Math.min(120,w/6);i++)d.push({x:Math.random()*w,y:Math.random()*h,l:10+Math.random()*18,s:5+Math.random()*7})}
-  function tick(){x.clearRect(0,0,w,h);x.strokeStyle='rgba(127,166,255,.28)';x.lineWidth=1;x.beginPath();
-    for(var i=0;i<d.length;i++){var r=d[i];x.moveTo(r.x,r.y);x.lineTo(r.x-2,r.y+r.l);r.y+=r.s;if(r.y>h){r.y=-r.l;r.x=Math.random()*w}}
-    x.stroke();requestAnimationFrame(tick)}
-  addEventListener('resize',size);size();tick();
+const c=document.getElementById('rain'),x=c.getContext('2d');let w,h,d=[],drops=90;
+function size(){w=c.width=innerWidth*devicePixelRatio;h=c.height=innerHeight*devicePixelRatio;c.style.width=innerWidth+'px';c.style.height=innerHeight+'px';x.scale(devicePixelRatio,devicePixelRatio);w=innerWidth;h=innerHeight;d=[];drops=Math.min(120,Math.floor(w/7));for(let i=0;i<drops;i++)d.push({x:Math.random()*w,y:Math.random()*h,l:10+Math.random()*20,s:5+Math.random()*8,a:.12+Math.random()*.25})}
+function tick(){x.clearRect(0,0,w,h);x.beginPath();for(const r of d){x.strokeStyle='rgba(127,166,255,'+r.a+')';x.moveTo(r.x,r.y);x.lineTo(r.x-2,r.y+r.l);r.y+=r.s;if(r.y>h){r.y=-r.l;r.x=Math.random()*w}}x.stroke();requestAnimationFrame(tick)}
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches){addEventListener('resize',size);size();tick()}
 })();
 </script>
 </body>
